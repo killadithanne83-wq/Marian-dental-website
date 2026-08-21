@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marian Dental Care, Uzhavoor, Kottayam - professional dental care in a comfortable environment.">
+  <title>Marian Dental Care | Uzhavoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --gold: #cda63d;
+      --gold-dark: #b38b29;
+      --ink: #111111;
+      --muted: #667085;
+      --cream: #f8f7f4;
+      --dark: #1d1d1d;
+      --dark-card: #292929;
+      --white: #ffffff;
+      --border: #e8e5df;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 9%;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 2px 18px rgba(0,0,0,.06);
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-main {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+      font-size: 25px;
+      letter-spacing: 4px;
+      font-weight: 600;
+    }
+
+    .brand-sub {
+      margin-top: 7px;
+      font-size: 12px;
+      color: #777;
+      letter-spacing: 3px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 16px;
+    }
+
+    .nav a {
+      transition: .25s ease;
+    }
+
+    .nav a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-call,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      letter-spacing: .2px;
+      border-radius: 4px;
+      transition: .25s ease;
+    }
+
+    .nav-call {
+      background: var(--gold);
+      color: white;
+      padding: 12px 25px;
+      box-shadow: 0 5px 15px rgba(177,137,38,.18);
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    .hero>img,
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero>img {
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, .56);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(900px, 90%);
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 5px;
+      font-weight: 500;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .hero h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .hero h1 {
+      margin: 24px 0 18px;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.03;
+      font-weight: 600;
+    }
+
+    .hero-text {
+      font-size: 20px;
+      opacity: .9;
+    }
+
+    .hero-actions,
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-width: 158px;
+      padding: 15px 27px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 7px 18px rgba(168, 126, 25, .18);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    .scroll {
+      position: absolute;
+      z-index: 2;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 4px;
+      opacity: .8;
+    }
+
+    .scroll span {
+      display: block;
+      text-align: center;
+      font-size: 23px;
+      margin-top: 5px;
+    }
+
+    .section {
+      padding: 105px 9%;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 7%;
+      align-items: center;
+    }
+
+    .image-card img {
+      height: 560px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, .13);
+    }
+
+    .content h2 {
+      font-size: clamp(38px, 4vw, 53px);
+      line-height: 1.08;
+      margin: 25px 0;
+    }
+
+    .content p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .gold-line {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 15px;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .location-pill {
+      display: inline-block;
+      margin: 28px 0 30px;
+      padding: 9px 18px;
+      background: #f5f3ef;
+      border-radius: 999px;
+      color: #667085;
+    }
+
+    .dark-section {
+      background: var(--dark);
+      color: white;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(42px, 5vw, 56px);
+      line-height: 1.1;
+      margin-top: 25px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+    }
+
+    .feature-card {
+      min-height: 275px;
+      padding: 34px 24px;
+      text-align: center;
+      border: 1px solid #414141;
+      border-radius: 15px;
+      background: var(--dark-card);
+    }
+
+    .feature-icon,
+    .service-icon {
+      color: var(--gold);
+      font-size: 38px;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .feature-card h3,
+    .service-card h3 {
+      font-size: 21px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #c5c5c5;
+      font-size: 15px;
+    }
+
+    .services {
+      background: #faf9f7;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .service-card {
+      min-height: 270px;
+      padding: 40px;
+      background: #fff;
+      border: 1px solid #f0eee9;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .025);
+    }
+
+    .service-card p {
+      color: var(--muted);
+    }
+
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 400px);
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .doctor-card {
+      text-align: center;
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfaf8;
+    }
+
+    .doctor-photo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      background: #2b2b2b;
+      color: #999;
+      display: grid;
+      place-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+    }
+
+    .doctor-card h3 {
+      font-size: 27px;
+    }
+
+    .doctor-card p {
+      color: var(--gold);
+      font-size: 17px;
+    }
+
+    .gallery {
+      background: #fff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-grid figure {
+      overflow: hidden;
+      border-radius: 12px;
+      background: #faf9f7;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    }
+
+    .gallery-grid img {
+      height: 330px;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-grid figcaption {
+      padding: 13px;
+      text-align: center;
+      color: #667085;
+    }
+
+    .clinic-detail {
+      background: #fbfaf8;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding: 10px 0 10px 35px;
+      font-size: 18px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .location-section {
+      background: white;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 45px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 45px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfaf8;
+    }
+
+    .contact-card h3 {
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      color: #667085;
+      font-size: 18px;
+    }
+
+    .contact-card hr {
+      border: 0;
+      border-top: 1px solid #ddd9d0;
+      margin: 30px 0;
+    }
+
+    .small-label {
+      font-size: 14px !important;
+      margin-bottom: 3px;
+    }
+
+    .phone {
+      display: block;
+      color: var(--gold-dark);
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .map-wrap {
+      min-height: 470px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, .08);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    .map-link {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      color: var(--gold-dark);
+    }
+
+    .contact-section {
+      padding: 90px 9%;
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-inner h2 {
+      font-size: clamp(42px, 5vw, 58px);
+      margin: 22px 0 10px;
+    }
+
+    .contact-inner p {
+      color: #c7c7c7;
+      font-size: 18px;
+    }
+
+    .contact-inner a {
+      color: inherit;
+    }
+
+    .gold-outline {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .gold-outline:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 70px;
+      padding: 70px 9%;
+      background: #171717;
+      color: #d2d2d2;
+    }
+
+    .footer .brand {
+      margin-bottom: 25px;
+    }
+
+    .footer p {
+      max-width: 420px;
+      margin-bottom: 13px;
+    }
+
+    .footer h4 {
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .footer>div:nth-child(2) a {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .footer .small-btn {
+      min-width: 180px;
+      padding: 12px 20px;
+    }
+
+    /* ----- APPOINTMENT SECTION (unchanged design) ----- */
+    .appointment-section {
+      background: #fbfaf8;
+      padding: 105px 9%;
+    }
+
+    .appointment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .appointment-info h3 {
+      font-size: 32px;
+      margin-top: 20px;
+      line-height: 1.2;
+    }
+
+    .appointment-info p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    .appointment-info .info-list {
+      margin-top: 30px;
+      list-style: none;
+    }
+
+    .appointment-info .info-list li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 17px;
+      color: #1d1d1d;
+    }
+
+    .appointment-info .info-list li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .appointment-form-wrap {
+      background: #fff;
+      padding: 45px 40px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .04);
+    }
+
+    .appointment-form-wrap .form-title {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .appointment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1d1d1d;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group label .required {
+      color: #b22222;
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 16px;
+      padding: 12px 16px;
+      border: 1px solid #e0ddd6;
+      border-radius: 8px;
+      background: #fcfcfb;
+      transition: border 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(205, 166, 61, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-group .hint {
+      font-size: 12px;
+      color: #8a8a8a;
+      margin-top: 2px;
+    }
+
+    .btn-submit {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 16px 28px;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.15s;
+      box-shadow: 0 7px 18px rgba(168, 126, 25, .18);
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: #b22222;
+      background: #fff7f7;
+    }
+
+    .form-group .error-msg {
+      color: #b22222;
+      font-size: 13px;
+      display: none;
+      margin-top: 2px;
+    }
+
+    .form-group.error .error-msg {
+      display: block;
+    }
+
+    @media (max-width: 1100px) {
+      .site-header {
+        padding: 0 5%;
+      }
+      .nav {
+        gap: 18px;
+      }
+      .section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .feature-card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .site-header {
+        height: 74px;
+      }
+      .nav {
+        gap: 12px;
+        font-size: 13px;
+      }
+      .nav-call {
+        padding: 10px 14px;
+      }
+      .brand-main {
+        font-size: 20px;
+      }
+      .brand-sub {
+        font-size: 9px;
+      }
+      .two-column,
+      .location-grid,
+      .service-grid,
+      .gallery-grid,
+      .footer,
+      .appointment-grid {
+        grid-template-columns: 1fr;
+      }
+      .doctor-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: auto;
+      }
+      .image-card img {
+        height: 470px;
+      }
+      .footer {
+        gap: 35px;
+      }
+      .appointment-form-wrap {
+        padding: 32px 24px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .appointment-section {
+        padding: 75px 5%;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-header {
+        position: absolute;
+        height: auto;
+        padding: 18px 5%;
+        align-items: flex-start;
+      }
+      .nav {
+        display: none;
+      }
+      .hero {
+        min-height: 720px;
+      }
+      .hero-content {
+        margin-top: 55px;
+      }
+      .hero h1 {
+        font-size: 44px;
+      }
+      .hero-text {
+        font-size: 16px;
+      }
+      .section {
+        padding: 75px 5%;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-card:last-child {
+        grid-column: auto;
+      }
+      .service-card,
+      .contact-card {
+        padding: 30px;
+      }
+      .image-card img {
+        height: 360px;
+      }
+      .gallery-grid img {
+        height: 280px;
+      }
+      .map-wrap {
+        min-height: 380px;
+      }
+      .map-wrap iframe {
+        height: 330px;
+      }
+      .hero-actions .btn,
+      .contact-actions .btn {
+        width: min(320px, 90vw);
+      }
+      .appointment-info h3 {
+        font-size: 28px;
+      }
+      .appointment-form-wrap .form-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-main">MARIAN</span>
+      <span class="brand-sub">DENTAL CARE</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#appointment">Appointment</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+917558859848">CALL NOW</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <img src="images/clinic-exterior.webp" alt="Marian Dental Care exterior">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">UZHAVOOR · KOTTAYAM · KERALA</p>
+        <h1>Exceptional Dental Care<br>in Uzhavoor</h1>
+        <p class="hero-text">Professional dental care in a comfortable and welcoming environment.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="tel:+917558859848">CALL NOW</a>
+          <a class="btn btn-outline" href="https://maps.app.goo.gl/9hpa2wABZ1k8dX3q9" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        </div>
+      </div>
+
+      <a class="scroll" href="#about">SCROLL <span>↓</span></a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="two-column">
+        <div class="image-card">
+          <img src="images/reception.webp" alt="Marian Dental Care reception and waiting area">
+        </div>
+
+        <div class="content">
+          <p class="eyebrow gold-text">ABOUT US</p>
+          <span class="gold-line"></span>
+          <h2>Welcome to<br><strong>MARIAN DENTAL CARE</strong></h2>
+          <p>
+            Located in Uzhavoor, Kottayam, Kerala, Marian Dental Care provides
+            professional dental care in a comfortable and welcoming environment,
+            with specialist-led care focused on individual patient needs.
+          </p>
+          <div class="location-pill">📍 Uzhavoor, Kottayam, Kerala</div>
+          <a class="btn btn-gold" href="https://maps.app.goo.gl/9hpa2wABZ1k8dX3q9" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section dark-section">
+      <div class="section-heading">
+        <p class="eyebrow gold-text">OUR COMMITMENT</p>
+        <span class="gold-line center"></span>
+        <h2>Why Choose Us</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">♧</div>
+          <h3>Modern Clinical<br>Environment</h3>
+          <p>A well-equipped clinic designed for patient comfort and clinical precision.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">☆</div>
+          <h3>Specialist Dental Care</h3>
+          <p>Led by qualified dental specialists with postgraduate expertise.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">♡</div>
+          <h3>Comfortable Patient Area</h3>
+          <p>A calm and welcoming space designed to put patients at ease.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">♙</div>
+          <h3>Personalized Attention</h3>
+          <p>Care tailored to each individual patient's needs and concerns.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">☆</div>
+          <h3>Clean & Welcoming Clinic</h3>
+          <p>Maintained to high standards of cleanliness and hygiene.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section services">
+      <div class="section-heading">
+        <p class="eyebrow gold-text">WHAT WE OFFER</p>
+        <span class="gold-line center"></span>
+        <h2>Our Services</h2>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">◉</div>
+          <h3>RCT (Root Canal)</h3>
+          <p>Root canal treatment to manage infected or damaged teeth and help preserve the natural tooth when appropriate.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">＋</div>
+          <h3>Dental Restoration</h3>
+          <p>Restorative dental care aimed at restoring the function, strength and appearance of damaged teeth.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">◒</div>
+          <h3>Presurgical Orthodontics</h3>
+          <p>Orthodontic preparation and treatment planning for patients who require corrective jaw surgery.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DOCTORS -->
+    <section id="doctors" class="section doctors">
+      <div class="section-heading">
+        <span class="gold-line center"></span>
+        <h2>Meet Our Doctors</h2>
+      </div>
+
+      <div class="doctor-grid">
+        <article class="doctor-card">
+          <div class="doctor-photo">DR</div>
+          <h3>Dr. Shijo Davis</h3>
+          <p>BDS, MDS (Orthodontics)</p>
+        </article>
+
+        <article class="doctor-card">
+          <div class="doctor-photo">DR</div>
+          <h3>Dr. Neenu Shijo</h3>
+          <p>BDS, MDS</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery">
+      <div class="section-heading">
+        <p class="eyebrow gold-text">OUR CLINIC</p>
+        <span class="gold-line center"></span>
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/clinic-exterior.webp" alt="Clinic exterior">
+          <figcaption>Clinic Exterior</figcaption>
+        </figure>
+        <figure>
+          <img src="images/clinic-entrance.webp" alt="Clinic entrance">
+          <figcaption>Clinic Entrance</figcaption>
+        </figure>
+        <figure>
+          <img src="images/reception.webp" alt="Reception and waiting area">
+          <figcaption>Reception & Waiting Area</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CLINIC -->
+    <section class="section clinic-detail">
+      <div class="two-column reverse-mobile">
+        <div class="image-card">
+          <img src="images/clinic-entrance.webp" alt="Marian Dental Care entrance">
+        </div>
+
+        <div class="content">
+          <p class="eyebrow gold-text">THE CLINIC</p>
+          <span class="gold-line"></span>
+          <h2>A Comfortable Environment<br>for Your Dental Care</h2>
+
+          <ul class="check-list">
+            <li>Welcoming reception</li>
+            <li>Comfortable waiting area</li>
+            <li>Modern clinical environment</li>
+            <li>Patient-focused care</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== APPOINTMENT SECTION ========== -->
+    <section id="appointment" class="appointment-section">
+      <div class="section-heading">
+        <p class="eyebrow gold-text">BOOK YOUR VISIT</p>
+        <span class="gold-line center"></span>
+        <h2>Request an Appointment</h2>
+      </div>
+
+      <div class="appointment-grid">
+        <!-- left info -->
+        <div class="appointment-info">
+          <h3>We look forward to<br>welcoming you</h3>
+          <p>Submit your request and we’ll confirm availability via WhatsApp. Our team will get back to you promptly.</p>
+          <ul class="info-list">
+            <li>Expert dental specialists</li>
+            <li>Modern, comfortable clinic</li>
+            <li>Personalised care plans</li>
+            <li>Flexible appointment times</li>
+          </ul>
+        </div>
+
+        <!-- form -->
+        <div class="appointment-form-wrap">
+          <div class="form-title">Request a visit</div>
+          <form id="appointmentForm" class="appointment-form" novalidate>
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" required>
+              <div class="error-msg">Please enter your full name</div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Patient Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" required>
+              <div class="error-msg">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredDoctor">Preferred Doctor</label>
+              <select id="preferredDoctor">
+                <option value="">Select doctor</option>
+                <option value="Dr. Shijo Davis">Dr. Shijo Davis</option>
+                <option value="Dr. Neenu Shijo">Dr. Neenu Shijo</option>
+                <option value="Dr. Nithin Tom">Dr. Nithin Tom </option>
+                
+                <option value="Any">Any</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reason">Reason for Visit / Treatment</label>
+              <input type="text" id="reason" placeholder="e.g. Root canal, cleaning, consultation">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date</label>
+                <input type="date" id="preferredDate">
+              </div>
+              <div class="form-group">
+                <label for="preferredTime">Preferred Time</label>
+                <input type="time" id="preferredTime">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Additional Message</label>
+              <textarea id="message" placeholder="Any special requests or information..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">REQUEST APPOINTMENT</button>
+            <p style="font-size:14px; color:#667085; text-align:center; margin-top:8px;">
+              ⏳ This is a request – we'll confirm via WhatsApp.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- ========== END APPOINTMENT SECTION ========== -->
+
+    <!-- LOCATION -->
+    <section class="section location-section">
+      <div class="section-heading">
+        <h2>Visit MARIAN DENTAL CARE</h2>
+      </div>
+
+      <div class="location-grid">
+        <div class="contact-card">
+          <h3>MARIAN DENTAL CARE</h3>
+          <p>Uzhavoor<br>Kottayam<br>Kerala, India</p>
+          <hr>
+          <p class="small-label">Phone</p>
+          <a class="phone" href="tel:+917558859848">+91 75588 59848</a>
+          <a class="btn btn-gold" href="https://maps.app.goo.gl/9hpa2wABZ1k8dX3q9" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        </div>
+
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Uzhavoor%2C%20Kottayam%2C%20Kerala&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Marian Dental Care location map">
+          </iframe>
+          <a class="map-link" href="https://maps.app.goo.gl/9hpa2wABZ1k8dX3q9" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="contact-inner">
+        <p class="eyebrow gold-text">GET IN TOUCH</p>
+        <h2>Ready for Your Next Visit?</h2>
+        <p>Contact MARIAN DENTAL CARE in Uzhavoor, Kottayam.</p>
+        <div class="contact-actions">
+          <a class="btn btn-gold" href="tel:+917558859848">CALL NOW</a>
+          <a class="btn btn-outline gold-outline" href="#appointment">REQUEST APPOINTMENT</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a class="brand" href="#home">
+        <span class="brand-main">MARIAN</span>
+        <span class="brand-sub">DENTAL CARE</span>
+      </a>
+      <p>Professional dental care in a comfortable and welcoming environment in Uzhavoor, Kottayam.</p>
+      <p>📍 Uzhavoor, Kottayam, Kerala, India</p>
+    </div>
+
+    <div>
+      <h4>QUICK LINKS</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#appointment">Appointment</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h4>CONTACT</h4>
+      <a class="phone" href="tel:+917558859848">+91 75588 59848</a>
+      <a class="btn btn-gold small-btn" href="#appointment">REQUEST APPOINTMENT</a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Appointment JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("appointmentForm");
+
+      if (!form) {
+        console.error("Appointment form not found.");
+        return;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const gender = document.getElementById("gender").value;
+        const doctor = document.getElementById("preferredDoctor").value;
+        const reason = document.getElementById("reason").value.trim();
+        const date = document.getElementById("preferredDate").value;
+        const time = document.getElementById("preferredTime").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!fullName) {
+          alert("Please enter your full name.");
+          document.getElementById("fullName").focus();
+          return;
+        }
+
+        if (!phone) {
+          alert("Please enter your phone number.");
+          document.getElementById("phone").focus();
+          return;
+        }
+
+        // Accept common Indian formats: 9876543210, 09876543210,
+        // 919876543210, or +919876543210.
+        const cleanPhone = phone.replace(/[\s\-()]/g, "");
+        const phoneDigits = cleanPhone
+          .replace(/^\+91/, "")
+          .replace(/^91/, "")
+          .replace(/^0/, "");
+
+        if (!/^\d{10}$/.test(phoneDigits)) {
+          alert("Please enter a valid 10-digit phone number.");
+          document.getElementById("phone").focus();
+          return;
+        }
+
+        // Fixed clinic WhatsApp destination.
+        // This is NOT the patient's phone number.
+        const clinicWhatsApp = "917558859848";
+
+        const whatsappMessage =
+`🦷 *MARIAN DENTAL CARE*
+*New Appointment Request*
+
+*Patient Name:* ${fullName}
+*Patient Phone:* ${phone}
+*Gender:* ${gender || "Not specified"}
+*Preferred Doctor:* ${doctor || "Not specified"}
+*Reason for Visit / Treatment:* ${reason || "Not specified"}
+*Preferred Date:* ${date || "Not specified"}
+*Preferred Time:* ${time || "Not specified"}
+
+*Additional Message:*
+${message || "None"}
+
+Please confirm the appointment based on clinic availability.`;
+
+        const whatsappURL =
+          "https://wa.me/" +
+          clinicWhatsApp +
+          "?text=" +
+          encodeURIComponent(whatsappMessage);
+
+        // Opens WhatsApp with the message already prepared.
+        // The patient presses Send inside WhatsApp.
+        window.location.href = whatsappURL;
+      });
+    });
+  </script>
+</body>
+</html>
